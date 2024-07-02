@@ -6,18 +6,29 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7126
+          "Port": 7000
+        },
+        {
+          "Host": "localhost",
+          "Port": 7001
+        },
+        {
+          "Host": "localhost",
+          "Port": 7002
         }
       ],
       "UpstreamPathTemplate": "/api1",
       "UpstreamHttpMethod": [ "GET", "POST" ],
-      "AuthenticationOptions": {
-        "AllowedScopes": [],
-        "AuthenticationProviderKey": "Bearer"
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
       },
-      "RouteClaimsRequirement": {
-        "Role": "Admin"
-      }
+      //"AuthenticationOptions": {
+      //  "AllowedScopes": [],
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "Role": "Admin"
+      //}
     },
     {
       "DownstreamPathTemplate": "/",

@@ -26,7 +26,10 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGet("/", () => "API 1")
-    .RequireAuthorization("AdminPolicy");
+//app.MapGet("/", () => "API 1 - " + args[0])
+//    .RequireAuthorization("AdminPolicy");
+
+
+app.MapGet("/", () => "API 1 - " + args[0]);
 
 app.Run();
